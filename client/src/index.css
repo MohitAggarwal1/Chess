@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-wood-light: #dcb35c;
+  --color-wood-dark: #8b5a2b;
+  --color-wood-grain: rgba(0, 0, 0, 0.05);
+  --color-wood-piece-white: #ffffff;
+  --color-wood-piece-black: #111111;
+
+  /* Golden Theme Palette */
+  --color-gold-primary: #d4af37;
+  --color-gold-light: #f9d71c;
+  --color-gold-dark: #b8860b;
+  --color-gold-muted: #8b7500;
+
+  --color-dark-bg: #0a0a0a;
+  --color-dark-surface: #141414;
+  --color-dark-card: #1c1c1c;
+  --color-dark-card-hover: #262626;
+  --color-dark-border: #333333;
+
+  --color-white-pure: #ffffff;
+  --color-white-soft: #f0f0f0;
+  --color-grey-light: #cccccc;
+  --color-grey-medium: #888888;
+  --color-grey-dark: #444444;
+
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #aaaaaa;
+  --color-text-muted: #666666;
+
+  --font-main: "Inter", sans-serif;
+  --font-display: "Outfit", sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-gold: 0 2px 12px rgba(212, 175, 55, 0.25);
+  --shadow-gold-heavy: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-text-primary font-main antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-md font-semibold transition-all duration-300 whitespace-nowrap active:scale-95;
+  }
+
+  .btn-primary {
+    @apply bg-gold-primary text-black shadow-gold hover:bg-gold-light hover:-translate-y-px hover:shadow-gold-heavy;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-text-secondary border border-dark-border hover:text-white hover:border-gold-primary/50 hover:bg-gold-primary/5;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-gold-primary border border-gold-primary/30 hover:bg-gold-primary/10 hover:border-gold-primary;
+  }
+
+  .container {
+    @apply max-w-[1280px] mx-auto px-6;
+  }
+
+  .card-premium {
+    @apply bg-dark-card border border-dark-border rounded-2xl hover:border-gold-primary/30 transition-all duration-300;
+  }
+
+  /* Wood Texture Utility */
+  .wood-pattern {
+    background-image: repeating-linear-gradient(45deg,
+        var(--color-wood-grain) 0px,
+        var(--color-wood-grain) 2px,
+        transparent 2px,
+        transparent 4px);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-grey-dark rounded-full hover:bg-gold-primary/50 transition-colors;
+  }
+}
