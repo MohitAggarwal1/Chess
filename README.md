@@ -1,4 +1,4 @@
-# 🌐 Chess.in — Premium Full-Stack Chess Platform
+# 🌐 Chess.in - Premium Full-Stack Chess Platform
 
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 ![Tech](https://img.shields.io/badge/Tech-React%2FNode%2FMongoDB-blue)
@@ -117,3 +117,4 @@ Developed by **Mohit Aggarwal**, focusing on building premium, performant, and p
 ---
 
 ### ⭐ Star this project if you love the wooden aesthetic!
+
