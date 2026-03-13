@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess.in - Play Chess Online</title>
+    <meta name="description"
+        content="Play chess online for free. Play with millions of players worldwide, improve your skills, solve puzzles and more." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+</head>
+
+<body>
+
+    <!-- ====== HEADER / NAVBAR ====== -->
+    <header class="site-header" id="site-header">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="nav-logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="#81b64c" />
+                        <path d="M20 6 L24 12 L22 12 L22 16 L28 16 L28 12 L26 12 L30 6 Z" fill="white" />
+                        <rect x="12" y="28" width="16" height="4" rx="2" fill="white" />
+                        <rect x="10" y="32" width="20" height="2" rx="1" fill="white" />
+                        <path d="M14 28 L16 20 L18 22 L20 18 L22 22 L24 20 L26 28 Z" fill="white" />
+                    </svg>
+                    <span class="logo-text">Chess<span class="logo-dot">.in</span></span>
+                </a>
+                <div class="nav-links">
+                    <div class="nav-item dropdown">
+                        <a href="game.html" class="nav-link">Play <svg class="chevron" viewBox="0 0 10 6">
+                                <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"
+                                    stroke-linecap="round" />
+                            </svg></a>
+                        <div class="dropdown-menu">
+                            <a href="game.html" class="drop-item"><span class="drop-icon">⚡</span> Play Online</a>
+                            <a href="game.html?mode=computer" class="drop-item"><span class="drop-icon">🤖</span> Play
+                                Computer</a>
+                            <a href="#" class="drop-item"><span class="drop-icon">📅</span> Daily Chess</a>
+                            <a href="#" class="drop-item"><span class="drop-icon">🏆</span> Tournaments</a>
+                            <a href="#" class="drop-item"><span class="drop-icon">⚔️</span> 4 Player Chess</a>
+                            <a href="#" class="drop-item"><span class="drop-icon">🎲</span> Chess960</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="puzzles.html" class="nav-link">Puzzles <svg class="chevron" viewBox="0 0 10 6">
+                                <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"
+                                    stroke-linecap="round" />
+                            </svg></a>
+                        <div class="dropdown-menu">
+                            <a href="puzzles.html" class="drop-item"><span class="drop-icon">🧩</span> Puzzle Rush</a>
+                            <a href="puzzles.html" class="drop-item"><span class="drop-icon">📚</span> Daily Puzzle</a>
+                            <a href="puzzles.html" class="drop-item"><span class="drop-icon">🎯</span> Puzzle Battle</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="learn.html" class="nav-link">Learn <svg class="chevron" viewBox="0 0 10 6">
+                                <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"
+                                    stroke-linecap="round" />
+                            </svg></a>
+                        <div class="dropdown-menu">
+                            <a href="learn.html" class="drop-item"><span class="drop-icon">📖</span> Lessons</a>
+                            <a href="learn.html" class="drop-item"><span class="drop-icon">🎓</span> Courses</a>
+                            <a href="learn.html" class="drop-item"><span class="drop-icon">📝</span> Articles</a>
+                            <a href="learn.html" class="drop-item"><span class="drop-icon">🏅</span> Drills</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link">Watch <svg class="chevron" viewBox="0 0 10 6">
+                                <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"
+                                    stroke-linecap="round" />
+                            </svg></a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="drop-item"><span class="drop-icon">📺</span> Live</a>
+                            <a href="#" class="drop-item"><span class="drop-icon">🎬</span> Video Library</a>
+                            <a href="#" class="drop-item"><span class="drop-icon">📡</span> Events</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link">News <svg class="chevron" viewBox="0 0 10 6">
+                                <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"
+                                    stroke-linecap="round" />
+                            </svg></a>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link">Social <svg class="chevron" viewBox="0 0 10 6">
+                                <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"
+                                    stroke-linecap="round" />
+                            </svg></a>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link">Tools <svg class="chevron" viewBox="0 0 10 6">
+                                <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"
+                                    stroke-linecap="round" />
+                            </svg></a>
+                    </div>
+                    <a href="#" class="nav-link">More</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="btn btn-ghost" id="loginBtn">Log In</button>
+                <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                <button class="nav-search" aria-label="Search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ====== HERO SECTION ====== -->
+    <section class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Play Chess Online<br />on the #1 Site!</h1>
+                <p class="hero-subtitle">Join over <strong>150,000,000</strong> players worldwide — free forever!</p>
+                <div class="hero-buttons">
+                    <a href="game.html" class="btn btn-hero-primary">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                        Play Online — It's Free!
+                    </a>
+                    <button class="btn btn-hero-secondary" id="playComputerBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8M12 17v4" />
+                        </svg>
+                        Play vs Computer
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="6840293">0</span>
+                        <span class="stat-label">Games Today</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="152847">0</span>
+                        <span class="stat-label">Playing Right Now</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="150000000">0</span>
+                        <span class="stat-label">Members</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-board-container">
+                <div class="hero-board" id="heroBoard"></div>
+                <div class="board-glow"></div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+                <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#1a1a2e" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- ====== LIVE GAMES TICKER ====== -->
+    <div class="live-ticker">
+        <div class="ticker-label">🔴 LIVE</div>
+        <div class="ticker-content" id="tickerContent">
+            <span>Magnus C. vs Ian N. — Rapid — Move 32</span>
+            <span>Hikaru N. vs Alireza F. — Blitz — Move 18</span>
+            <span>Fabiano C. vs Ding L. — Classical — Move 45</span>
+            <span>Wesley So vs Levon A. — Rapid — Move 27</span>
+            <span>Anish G. vs Viswanathan A. — Blitz — Move 12</span>
+        </div>
+    </div>
+
+    <!-- ====== GAME MODES ====== -->
+    <section class="section game-modes-section" id="play">
+        <div class="container">
+            <h2 class="section-title">How Do You Want to Play?</h2>
+            <p class="section-subtitle">Choose your game mode and start playing instantly</p>
+            <div class="game-modes-grid">
+                <a href="game.html" class="game-card">
+                    <div class="game-card-icon" style="background: linear-gradient(135deg, #81b64c, #5a8a2c);">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="20" fill="rgba(255,255,255,0.15)" />
+                            <path
+                                d="M16 24 C16 19.6 19.6 16 24 16 C28.4 16 32 19.6 32 24 C32 28.4 28.4 32 24 32 C19.6 32 16 28.4 16 24Z"
+                                fill="white" />
+                            <path d="M24 16 L24 14 M24 34 L24 32 M14 24 L16 24 M32 24 L34 24" stroke="white"
+                                stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="game-card-info">
+                        <h3>Play Online</h3>
+                        <p>Challenge players around the world</p>
+                    </div>
+                    <div class="game-card-badge green">MOST POPULAR</div>
+                    <div class="game-card-arrow">→</div>
+                </a>
+
+                <a href="game.html?mode=computer" class="game-card">
+                    <div class="game-card-icon" style="background: linear-gradient(135deg, #4a90d9, #2563aa);">
+                        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="12" width="28" height="18" rx="3" fill="rgba(255,255,255,0.2)"
+                                stroke="white" stroke-width="2" />
+                            <path d="M16 30 L32 30 L34 36 L14 36 Z" fill="rgba(255,255,255,0.7)" />
+                            <circle cx="20" cy="21" r="2" fill="white" />
+                            <circle cx="28" cy="21" r="2" fill="white" />
+                            <path d="M22 25 Q24 27 26 25" stroke="white" stroke-width="1.5" fill="none"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="game-card-info">
+                        <h3>Play Computer</h3>
+                        <p>Play at any level against Stockfish</p>
+                    </div>
+                    <div class="game-card-badge blue">AI POWERED</div>
+                    <div class="game-card-arrow">→</div>
+                </a>
+
+                <a href="#" class="game-card">
+                    <div class="game-card-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="12" y="8" width="24" height="32" rx="3" fill="rgba(255,255,255,0.2)" stroke="white"
+                                stroke-width="2" />
+                            <path d="M18 16 L30 16 M18 22 L30 22 M18 28 L24 28" stroke="white" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="game-card-info">
+                        <h3>Daily Chess</h3>
+                        <p>Make moves at your own pace</p>
+                    </div>
+                    <div class="game-card-badge yellow">CASUAL</div>
+                    <div class="game-card-arrow">→</div>
+                </a>
+
+                <a href="puzzles.html" class="game-card">
+                    <div class="game-card-icon" style="background: linear-gradient(135deg, #ef4444, #b91c1c);">
+                        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 24 L24 12 L32 24 L24 36 Z" fill="rgba(255,255,255,0.2)" stroke="white"
+                                stroke-width="2" />
+                            <circle cx="24" cy="24" r="4" fill="white" />
+                        </svg>
+                    </div>
+                    <div class="game-card-info">
+                        <h3>Puzzles</h3>
+                        <p>Sharpen your tactical skills</p>
+                    </div>
+                    <div class="game-card-badge red">TRAINING</div>
+                    <div class="game-card-arrow">→</div>
+                </a>
+
+                <a href="learn.html" class="game-card">
+                    <div class="game-card-icon" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">
+                        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 20 L24 12 L40 20 L24 28 Z" fill="rgba(255,255,255,0.2)" stroke="white"
+                                stroke-width="2" />
+                            <path d="M40 20 L40 32 M16 25 L16 36 C16 36 20 38 24 38 C28 38 32 36 32 36 L32 25"
+                                stroke="white" stroke-width="2" fill="none" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="game-card-info">
+                        <h3>Learn</h3>
+                        <p>Lessons, courses & articles</p>
+                    </div>
+                    <div class="game-card-arrow">→</div>
+                </a>
+
+                <a href="#" class="game-card">
+                    <div class="game-card-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+                        <svg viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 10 L24 38 M10 24 L38 24" stroke="white" stroke-width="3"
+                                stroke-linecap="round" />
+                            <circle cx="24" cy="24" r="6" fill="rgba(255,255,255,0.3)" stroke="white"
+                                stroke-width="2" />
+                        </svg>
+                    </div>
+                    <div class="game-card-info">
+                        <h3>Tournaments</h3>
+                        <p>Compete in online tournaments</p>
+                    </div>
+                    <div class="game-card-badge cyan">COMPETITIVE</div>
+                    <div class="game-card-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== MINI BOARD DEMO ====== -->
+    <section class="section play-demo-section">
+        <div class="container">
+            <div class="play-demo-inner">
+                <div class="play-demo-board">
+                    <div id="miniBoard" class="mini-board-demo"></div>
+                    <div class="board-controls">
+                        <button class="board-btn" id="prevMove">‹</button>
+                        <button class="board-btn active" id="playPause">⏸</button>
+                        <button class="board-btn" id="nextMove">›</button>
+                    </div>
+                </div>
+                <div class="play-demo-text">
+                    <div class="demo-badge">
+                        <svg viewBox="0 0 20 20" fill="#81b64c">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        WHY CHESS.IN?
+                    </div>
+                    <h2>The World's #1 Chess Site</h2>
+                    <p class="demo-description">Play with 150 million players worldwide. Fair and balanced matchmaking,
+                        tons of game modes, and world-class learning resources.</p>
+                    <div class="demo-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <strong>Fair Play Detection</strong>
+                                <p>Advanced anti-cheat system ensures fair games</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <strong>Smart Matchmaking</strong>
+                                <p>Get paired with players of similar skill level</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <strong>Game Analysis</strong>
+                                <p>Analyze every game with computer assistance</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <strong>Cross-Platform</strong>
+                                <p>Play on web, iOS, and Android seamlessly</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="game.html" class="btn btn-primary btn-lg">Start Playing Free →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== MEMBERSHIP / UPGRADE SECTION ====== -->
+    <section class="section membership-section">
+        <div class="container">
+            <div class="membership-header">
+                <div class="crown-icon">♛</div>
+                <h2>Unlock Your Full Potential</h2>
+                <p>Upgrade to Chess.in Premium for unlimited access to all features</p>
+            </div>
+            <div class="membership-grid">
+                <div class="membership-card free">
+                    <div class="membership-tier">FREE</div>
+                    <div class="membership-price">$0<span>/month</span></div>
+                    <div class="membership-name">Basic</div>
+                    <ul class="membership-features">
+                        <li class="included">Unlimited Online Games</li>
+                        <li class="included">Basic Puzzles</li>
+                        <li class="included">10 Interactive Lessons</li>
+                        <li class="included">Game Archives (last 50)</li>
+                        <li class="not-included">Computer Analysis</li>
+                        <li class="not-included">Advanced Lessons</li>
+                        <li class="not-included">Video Library</li>
+                        <li class="not-included">Drills & Workouts</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-green">Play Free</a>
+                </div>
+
+                <div class="membership-card silver popular">
+                    <div class="popular-badge">MOST POPULAR</div>
+                    <div class="membership-tier">SILVER</div>
+                    <div class="membership-price">$6<span>.99/month</span></div>
+                    <div class="membership-name">Silver</div>
+                    <ul class="membership-features">
+                        <li class="included">Everything in Free</li>
+                        <li class="included">Computer Analysis</li>
+                        <li class="included">30+ Lessons</li>
+                        <li class="included">Game Archives (Unlimited)</li>
+                        <li class="included">1 Interactive Lesson / Day</li>
+                        <li class="included">Endgame Practice</li>
+                        <li class="not-included">Full Video Library</li>
+                        <li class="not-included">Advanced Drills</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Get Silver</a>
+                </div>
+
+                <div class="membership-card gold">
+                    <div class="membership-tier gold-tier">GOLD</div>
+                    <div class="membership-price">$14<span>.99/month</span></div>
+                    <div class="membership-name">Gold</div>
+                    <ul class="membership-features">
+                        <li class="included">Everything in Silver</li>
+                        <li class="included">Full Video Library</li>
+                        <li class="included">100+ Lessons</li>
+                        <li class="included">Advanced Drills & Workouts</li>
+                        <li class="included">Opening Explorer</li>
+                        <li class="included">Advanced Analysis</li>
+                        <li class="included">Priority Support</li>
+                        <li class="included">Unique Profile Badge</li>
+                    </ul>
+                    <a href="#" class="btn btn-gold">Get Gold</a>
+                </div>
+
+                <div class="membership-card platinum">
+                    <div class="membership-tier platinum-tier">PLATINUM</div>
+                    <div class="membership-price">$29<span>.99/month</span></div>
+                    <div class="membership-name">Platinum</div>
+                    <ul class="membership-features">
+                        <li class="included">Everything in Gold</li>
+                        <li class="included">Unlimited Computer Analysis</li>
+                        <li class="included">Exclusive Courses</li>
+                        <li class="included">Chessable Premium Integration</li>
+                        <li class="included">No Ads</li>
+                        <li class="included">Coach Finding Tools</li>
+                        <li class="included">Team Tournaments</li>
+                        <li class="included">Diamond Profile Badge</li>
+                    </ul>
+                    <a href="#" class="btn btn-platinum">Get Platinum</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== PUZZLES SECTION ====== -->
+    <section class="section puzzles-section" id="puzzles">
+        <div class="container">
+            <div class="puzzles-inner">
+                <div class="puzzles-text">
+                    <div class="section-badge">🧩 PUZZLE RUSH</div>
+                    <h2>Sharpen Your Tactics</h2>
+                    <p>Solve thousands of puzzles and improve your chess rating. Try Puzzle Rush — solve as many puzzles
+                        as you can before running out of time!</p>
+                    <div class="puzzle-stats">
+                        <div class="puzzle-stat">
+                            <span class="p-stat-num">3M+</span>
+                            <span class="p-stat-label">Puzzles Available</span>
+                        </div>
+                        <div class="puzzle-stat">
+                            <span class="p-stat-num">500K+</span>
+                            <span class="p-stat-label">Daily Solvers</span>
+                        </div>
+                    </div>
+                    <a href="puzzles.html" class="btn btn-primary">Try Daily Puzzle</a>
+                </div>
+                <div class="puzzle-preview">
+                    <div class="puzzle-board-wrapper">
+                        <div id="puzzlePreviewBoard" class="puzzle-board-preview"></div>
+                        <div class="puzzle-prompt">
+                            <div class="puzzle-turn">
+                                <div class="turn-piece">♛</div>
+                                <span>White to move — Find the best move!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== LEARN SECTION ====== -->
+    <section class="section learn-section" id="learn">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Learn Chess the Right Way</h2>
+                <p class="section-subtitle">Thousands of lessons, courses, and videos for all skill levels</p>
+            </div>
+            <div class="learn-grid">
+                <div class="learn-card">
+                    <div class="learn-card-bg" style="background: linear-gradient(135deg, #1a1a3e 0%, #2d2d5f 100%);">
+                        <div class="learn-card-icon">📖</div>
+                    </div>
+                    <div class="learn-card-content">
+                        <span class="learn-tag">LESSONS</span>
+                        <h3>Interactive Lessons</h3>
+                        <p>Step-by-step lessons with real board interaction from beginner to master level.</p>
+                        <div class="learn-card-meta">
+                            <span>350+ Lessons</span>
+                            <span>•</span>
+                            <span>All Levels</span>
+                        </div>
+                        <a href="learn.html" class="btn btn-sm btn-outline">Browse Lessons</a>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-card-bg" style="background: linear-gradient(135deg, #1a2e1a 0%, #1e4020 100%);">
+                        <div class="learn-card-icon">🎬</div>
+                    </div>
+                    <div class="learn-card-content">
+                        <span class="learn-tag">VIDEOS</span>
+                        <h3>Video Courses</h3>
+                        <p>Learn from titled players and grandmasters. Watch, learn, and apply your knowledge.</p>
+                        <div class="learn-card-meta">
+                            <span>1000+ Videos</span>
+                            <span>•</span>
+                            <span>Expert Teachers</span>
+                        </div>
+                        <a href="learn.html" class="btn btn-sm btn-outline">Watch Videos</a>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <div class="learn-card-bg" style="background: linear-gradient(135deg, #2e1a1a 0%, #4a2020 100%);">
+                        <div class="learn-card-icon">🏋️</div>
+                    </div>
+                    <div class="learn-card-content">
+                        <span class="learn-tag">DRILLS</span>
+                        <h3>Drills & Workouts</h3>
+                        <p>Practice specific skills with targeted drills. Build muscle memory and pattern recognition.
+                        </p>
+                        <div class="learn-card-meta">
+                            <span>200+ Drills</span>
+                            <span>•</span>
+                            <span>Skill-Based</span>
+                        </div>
+                        <a href="learn.html" class="btn btn-sm btn-outline">Start Drilling</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== NEWS SECTION ====== -->
+    <section class="section news-section" id="news">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest Chess News</h2>
+                <a href="#" class="view-all">View All Articles →</a>
+            </div>
+            <div class="news-grid">
+                <article class="news-card featured">
+                    <div class="news-img-wrapper">
+                        <div class="news-img" style="background: linear-gradient(135deg, #1a3a1a, #2d6a2d);">
+                            <div class="news-img-placeholder">♚</div>
+                        </div>
+                        <div class="news-category-badge">FEATURED</div>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Tournament</span>
+                        <h3>Magnus Carlsen Wins the 2026 World Rapid Championship</h3>
+                        <p>The Norwegian GM produced extraordinary chess in the final round to clinch his 8th rapid
+                            world title with a perfect 11/11 score...</p>
+                        <div class="news-meta">
+                            <span class="news-author">By GM Daniel Naroditsky</span>
+                            <span class="news-date">Feb 22, 2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="news-side">
+                    <article class="news-card-sm">
+                        <div class="news-sm-img" style="background: linear-gradient(135deg, #1a1a3a, #2d2d6a);">♛</div>
+                        <div class="news-sm-content">
+                            <span class="news-category">Opening Theory</span>
+                            <h4>The Italian Game: Understanding the Giuoco Piano</h4>
+                            <span class="news-date">Feb 21, 2026</span>
+                        </div>
+                    </article>
+                    <article class="news-card-sm">
+                        <div class="news-sm-img" style="background: linear-gradient(135deg, #3a1a1a, #6a2d2d);">♟</div>
+                        <div class="news-sm-content">
+                            <span class="news-category">Analysis</span>
+                            <h4>Hikaru's Brilliant Queen Sacrifice Stuns the Chess World</h4>
+                            <span class="news-date">Feb 20, 2026</span>
+                        </div>
+                    </article>
+                    <article class="news-card-sm">
+                        <div class="news-sm-img" style="background: linear-gradient(135deg, #1a2e1a, #2d4a2d);">♝</div>
+                        <div class="news-sm-content">
+                            <span class="news-category">Tips</span>
+                            <h4>10 Endgame Principles Every Chess Player Must Know</h4>
+                            <span class="news-date">Feb 19, 2026</span>
+                        </div>
+                    </article>
+                    <article class="news-card-sm">
+                        <div class="news-sm-img" style="background: linear-gradient(135deg, #2e2e1a, #4a4a2d);">♜</div>
+                        <div class="news-sm-content">
+                            <span class="news-category">Puzzles</span>
+                            <h4>This Week's Most Difficult Puzzle Has a Beautiful Answer</h4>
+                            <span class="news-date">Feb 18, 2026</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== LEADERBOARD / COMMUNITY ====== -->
+    <section class="section community-section">
+        <div class="container">
+            <div class="community-inner">
+                <div class="leaderboard-panel">
+                    <h2>Top Players Today</h2>
+                    <div class="leaderboard-tabs">
+                        <button class="lboard-tab active" data-type="blitz">Blitz</button>
+                        <button class="lboard-tab" data-type="rapid">Rapid</button>
+                        <button class="lboard-tab" data-type="bullet">Bullet</button>
+                        <button class="lboard-tab" data-type="classical">Classical</button>
+                    </div>
+                    <div class="leaderboard-list" id="leaderboardList">
+                        <!-- Dynamically generated -->
+                    </div>
+                    <a href="#" class="btn btn-outline full-width">See Full Leaderboard</a>
+                </div>
+                <div class="community-content">
+                    <div class="section-badge">🌍 COMMUNITY</div>
+                    <h2>Join the World's Largest Chess Community</h2>
+                    <p>Connect with millions of chess players across the globe. Join clubs, participate in forums,
+                        challenge friends, and grow together.</p>
+                    <div class="community-features">
+                        <div class="comm-feat">
+                            <div class="comm-feat-icon">👥</div>
+                            <div>
+                                <h4>Chess Clubs</h4>
+                                <p>Join or create clubs for your region, school, or style of play</p>
+                            </div>
+                        </div>
+                        <div class="comm-feat">
+                            <div class="comm-feat-icon">💬</div>
+                            <div>
+                                <h4>Forums</h4>
+                                <p>Discuss strategy, share games, and connect with other enthusiasts</p>
+                            </div>
+                        </div>
+                        <div class="comm-feat">
+                            <div class="comm-feat-icon">🏆</div>
+                            <div>
+                                <h4>Team Matches</h4>
+                                <p>Represent your club in exciting team battles</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary">Join the Community</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== APP SECTION ====== -->
+    <section class="section app-section">
+        <div class="container">
+            <div class="app-inner">
+                <div class="app-text">
+                    <h2>Chess in Your Pocket</h2>
+                    <p>Play, learn, and analyze chess anywhere with the Chess.in app. Available for iOS and Android —
+                        free to download!</p>
+                    <div class="app-ratings">
+                        <div class="app-rating-item">
+                            <div class="stars">★★★★★</div>
+                            <div class="rating-info">
+                                <strong>4.8 / 5.0</strong>
+                                <span>App Store — 1M+ Reviews</span>
+                            </div>
+                        </div>
+                        <div class="app-rating-item">
+                            <div class="stars">★★★★★</div>
+                            <div class="rating-info">
+                                <strong>4.7 / 5.0</strong>
+                                <span>Google Play — 800K+ Reviews</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-buttons">
+                        <a href="#" class="store-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                            </svg>
+                            <div>
+                                <span>Download on the</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="store-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M3.18 23.76c.28.16.6.18.9.07l12.99-7.47-2.76-2.76-11.13 10.16zM20.88 10.25l-2.92-1.67-3.07 3.07 3.07 3.07 2.94-1.69c.84-.48.84-1.29-.02-1.78zM2.56.39c-.32.24-.56.64-.56 1.15v20.91l11.13-11.13L2.56.39zM16.07 3.97L3.08.24c-.3-.09-.62-.07-.9.07l11.13 10.77 2.76-7.11z" />
+                            </svg>
+                            <div>
+                                <span>Get it on</span>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="app-phones">
+                    <div class="phone-mockup phone-back">
+                        <div class="phone-screen">
+                            <div class="phone-board" id="phoneBoard"></div>
+                        </div>
+                    </div>
+                    <div class="phone-mockup phone-front">
+                        <div class="phone-screen">
+                            <div class="phone-board" id="phoneBoardFront"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="#81b64c" />
+                                <path d="M20 6 L24 12 L22 12 L22 16 L28 16 L28 12 L26 12 L30 6 Z" fill="white" />
+                                <rect x="12" y="28" width="16" height="4" rx="2" fill="white" />
+                                <rect x="10" y="32" width="20" height="2" rx="1" fill="white" />
+                                <path d="M14 28 L16 20 L18 22 L20 18 L22 22 L24 20 L26 28 Z" fill="white" />
+                            </svg>
+                            <span>Chess<span class="logo-dot">.in</span></span>
+                        </a>
+                        <p>The world's largest and most trusted chess platform. Play, learn, and grow with millions of
+                            players worldwide.</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" title="Twitter/X">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L2.002 2.25h6.561l4.263 5.633 4.418-5.633zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" title="Facebook">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" title="Instagram">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" title="YouTube">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" title="Twitch">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Play</h4>
+                        <ul>
+                            <li><a href="game.html">Play Online</a></li>
+                            <li><a href="game.html?mode=computer">Play Computer</a></li>
+                            <li><a href="#">Daily Chess</a></li>
+                            <li><a href="#">Tournaments</a></li>
+                            <li><a href="#">Chess960</a></li>
+                            <li><a href="#">4 Player Chess</a></li>
+                            <li><a href="#">Board Editor</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Learn</h4>
+                        <ul>
+                            <li><a href="learn.html">Chess Basics</a></li>
+                            <li><a href="learn.html">Lessons</a></li>
+                            <li><a href="learn.html">Openings</a></li>
+                            <li><a href="learn.html">Endgames</a></li>
+                            <li><a href="learn.html">Video Library</a></li>
+                            <li><a href="puzzles.html">Daily Puzzle</a></li>
+                            <li><a href="puzzles.html">Puzzle Rush</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Watch & Community</h4>
+                        <ul>
+                            <li><a href="#">Live Chess TV</a></li>
+                            <li><a href="#">Chess Events</a></li>
+                            <li><a href="#">Forums</a></li>
+                            <li><a href="#">Clubs</a></li>
+                            <li><a href="#">Team Matches</a></li>
+                            <li><a href="#">Titled Players</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Chess.in</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Jobs</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Help Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-inner">
+                    <p>© 2026 Chess.in. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====== MODAL: Login / Sign Up ====== -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal">
+            <button class="modal-close" id="closeModal">✕</button>
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="signup">Sign Up</button>
+                <button class="modal-tab" data-tab="login">Log In</button>
+            </div>
+            <div class="modal-body" id="signupForm">
+                <h2>Create Your Account</h2>
+                <p>Join 150 million players — free forever!</p>
+                <div class="form-group">
+                    <input type="text" placeholder="Username" class="form-input" id="regUsername" />
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" class="form-input" id="regEmail" />
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" class="form-input" id="regPassword" />
+                </div>
+                <button class="btn btn-primary btn-lg full-width">Create My Account</button>
+                <p class="form-terms">By registering you agree to our <a href="#">Terms of Service</a> and <a
+                        href="#">Privacy Policy</a></p>
+                <div class="form-divider"><span>or continue with</span></div>
+                <div class="social-auth">
+                    <button class="social-auth-btn google">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="#4285F4"
+                                d="M23.745 12.27c0-.79-.07-1.54-.19-2.27h-11.3v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z" />
+                            <path fill="#34A853"
+                                d="M12.255 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96h-3.98v3.09C3.515 21.3 7.565 24 12.255 24z" />
+                            <path fill="#FBBC05"
+                                d="M5.525 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62h-3.98a11.86 11.86 0 000 10.76l3.98-3.09z" />
+                            <path fill="#EA4335"
+                                d="M12.255 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C18.205 1.19 15.495 0 12.255 0c-4.69 0-8.74 2.7-10.71 6.62l3.98 3.09c.95-2.85 3.6-4.96 6.73-4.96z" />
+                        </svg>
+                        Continue with Google
+                    </button>
+                    <button class="social-auth-btn facebook">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="#1877F2"
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                        Continue with Facebook
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body hidden" id="loginForm">
+                <h2>Welcome Back!</h2>
+                <p>Log in to continue your chess journey</p>
+                <div class="form-group">
+                    <input type="text" placeholder="Username or Email" class="form-input" />
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" class="form-input" />
+                </div>
+                <button class="btn btn-primary btn-lg full-width">Log In</button>
+                <a href="#" class="forgot-password">Forgot password?</a>
+                <div class="form-divider"><span>or continue with</span></div>
+                <div class="social-auth">
+                    <button class="social-auth-btn google">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="#4285F4"
+                                d="M23.745 12.27c0-.79-.07-1.54-.19-2.27h-11.3v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z" />
+                            <path fill="#34A853"
+                                d="M12.255 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96h-3.98v3.09C3.515 21.3 7.565 24 12.255 24z" />
+                            <path fill="#FBBC05"
+                                d="M5.525 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62h-3.98a11.86 11.86 0 000 10.76l3.98-3.09z" />
+                            <path fill="#EA4335"
+                                d="M12.255 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C18.205 1.19 15.495 0 12.255 0c-4.69 0-8.74 2.7-10.71 6.62l3.98 3.09c.95-2.85 3.6-4.96 6.73-4.96z" />
+                        </svg>
+                        Google
+                    </button>
+                    <button class="social-auth-btn facebook">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="#1877F2"
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                        Facebook
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

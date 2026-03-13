@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess Puzzles — Chess.in</title>
+    <meta name="description" content="Solve daily chess puzzles, improve your tactics and boost your rating." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/puzzles.css" />
+</head>
+
+<body class="puzzles-page">
+
+    <!-- Header -->
+    <header class="site-header" id="site-header">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="nav-logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="#81b64c" />
+                        <path d="M20 6 L24 12 L22 12 L22 16 L28 16 L28 12 L26 12 L30 6 Z" fill="white" />
+                        <rect x="12" y="28" width="16" height="4" rx="2" fill="white" />
+                        <rect x="10" y="32" width="20" height="2" rx="1" fill="white" />
+                        <path d="M14 28 L16 20 L18 22 L20 18 L22 22 L24 20 L26 28 Z" fill="white" />
+                    </svg>
+                    <span class="logo-text">Chess<span class="logo-dot">.in</span></span>
+                </a>
+                <div class="game-nav-links">
+                    <a href="game.html" class="game-nav-link">Play</a>
+                    <a href="puzzles.html" class="game-nav-link active">Puzzles</a>
+                    <a href="learn.html" class="game-nav-link">Learn</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="btn btn-ghost" id="loginBtn">Log In</button>
+                <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="puzzles-layout">
+
+        <!-- Left Sidebar -->
+        <aside class="puzzle-sidebar left-puzzle-sidebar">
+            <!-- Rating Card -->
+            <div class="puzzle-sidebar-card">
+                <div class="puzzle-rating-header">
+                    <span class="puzzle-rating-icon">🧩</span>
+                    <div>
+                        <div class="puzzle-rating-label">Puzzle Rating</div>
+                        <div class="puzzle-rating-value" id="puzzleRating">1347</div>
+                    </div>
+                </div>
+                <div class="rating-progress-bar">
+                    <div class="rating-progress-fill" style="width: 62%"></div>
+                </div>
+                <div class="rating-progress-labels">
+                    <span>1000</span><span>Next rank: 1500</span>
+                </div>
+            </div>
+
+            <!-- Streak Card -->
+            <div class="puzzle-sidebar-card">
+                <div class="streak-header">
+                    <span class="streak-flame">🔥</span>
+                    <div>
+                        <div class="streak-label">Daily Streak</div>
+                        <div class="streak-value" id="streakCount">7 days</div>
+                    </div>
+                </div>
+                <div class="streak-dots">
+                    <div class="streak-dot active" title="Mon">M</div>
+                    <div class="streak-dot active" title="Tue">T</div>
+                    <div class="streak-dot active" title="Wed">W</div>
+                    <div class="streak-dot active" title="Thu">T</div>
+                    <div class="streak-dot active" title="Fri">F</div>
+                    <div class="streak-dot active" title="Sat">S</div>
+                    <div class="streak-dot today" title="Sun">S</div>
+                </div>
+            </div>
+
+            <!-- Stats Card -->
+            <div class="puzzle-sidebar-card">
+                <h3 class="sidebar-card-title">📊 My Stats</h3>
+                <div class="puzzle-stats-list">
+                    <div class="p-stat-row">
+                        <span>Puzzles Solved</span>
+                        <strong>2,841</strong>
+                    </div>
+                    <div class="p-stat-row">
+                        <span>Best Rating</span>
+                        <strong class="green-text">1,412</strong>
+                    </div>
+                    <div class="p-stat-row">
+                        <span>Accuracy</span>
+                        <strong>73%</strong>
+                    </div>
+                    <div class="p-stat-row">
+                        <span>Avg. Time</span>
+                        <strong>24s</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Puzzle Categories -->
+            <div class="puzzle-sidebar-card">
+                <h3 class="sidebar-card-title">🗂️ Categories</h3>
+                <div class="puzzle-categories">
+                    <button class="puzzle-cat-btn active" data-cat="daily">⭐ Daily Puzzle</button>
+                    <button class="puzzle-cat-btn" data-cat="tactics">⚔️ Tactics</button>
+                    <button class="puzzle-cat-btn" data-cat="endgame">♟ Endgame</button>
+                    <button class="puzzle-cat-btn" data-cat="opening">📖 Opening Traps</button>
+                    <button class="puzzle-cat-btn" data-cat="mate">♚ Mate in 2/3</button>
+                    <button class="puzzle-cat-btn" data-cat="fork">🍴 Forks</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center: Puzzle Board -->
+        <main class="puzzle-main">
+            <div class="puzzle-header-bar">
+                <div class="puzzle-meta">
+                    <span class="puzzle-difficulty easy" id="puzzleDifficulty">⭐ Daily Puzzle</span>
+                    <span class="puzzle-id" id="puzzleId">#12,847</span>
+                </div>
+                <div class="puzzle-rating-badge">
+                    Rating: <strong id="thisPuzzleRating">1250</strong>
+                </div>
+            </div>
+
+            <!-- Turn Indicator -->
+            <div class="puzzle-turn-bar" id="puzzleTurnBar">
+                <span class="turn-indicator-piece">♙</span>
+                <span id="puzzleTurnText">White to move — find the best move!</span>
+            </div>
+
+            <!-- Board -->
+            <div class="puzzle-board-area">
+                <div id="puzzleBoard" class="puzzle-board-container"></div>
+            </div>
+
+            <!-- Feedback Bar -->
+            <div class="puzzle-feedback-bar" id="puzzleFeedback">
+                <span id="feedbackIcon">💡</span>
+                <span id="feedbackText">Click a piece to start solving</span>
+            </div>
+
+            <!-- Controls -->
+            <div class="puzzle-controls">
+                <button class="puzzle-ctrl-btn" id="hintBtn" title="Show Hint">
+                    💡 Hint
+                </button>
+                <button class="puzzle-ctrl-btn" id="solutionBtn" title="Show Solution">
+                    👁 Solution
+                </button>
+                <button class="puzzle-ctrl-btn primary" id="nextPuzzleBtn" title="Next Puzzle">
+                    Next ▶
+                </button>
+                <button class="puzzle-ctrl-btn" id="retryBtn" title="Retry">
+                    ↺ Retry
+                </button>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="puzzle-sidebar right-puzzle-sidebar">
+
+            <!-- Daily Puzzle Info -->
+            <div class="puzzle-sidebar-card">
+                <h3 class="sidebar-card-title">📅 Today's Puzzle</h3>
+                <div class="daily-info">
+                    <div class="daily-info-row">
+                        <span>Theme</span><strong>Pin & Win</strong>
+                    </div>
+                    <div class="daily-info-row">
+                        <span>Source</span><strong>Magnus - Caruana 2023</strong>
+                    </div>
+                    <div class="daily-info-row">
+                        <span>Solved by</span><strong class="green-text">142,831 players</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Themes -->
+            <div class="puzzle-sidebar-card">
+                <h3 class="sidebar-card-title">🏷️ Themes Identified</h3>
+                <div class="puzzle-theme-tags" id="puzzleThemes">
+                    <span class="theme-tag">Pin</span>
+                    <span class="theme-tag">Tactic</span>
+                    <span class="theme-tag">Intermediate</span>
+                    <span class="theme-tag">Middlegame</span>
+                </div>
+            </div>
+
+            <!-- Move History -->
+            <div class="puzzle-sidebar-card">
+                <h3 class="sidebar-card-title">📋 Solution Moves</h3>
+                <div class="solution-moves" id="solutionMoves">
+                    <div class="solution-move-placeholder">Solve the puzzle to reveal moves</div>
+                </div>
+            </div>
+
+            <!-- Recent Results -->
+            <div class="puzzle-sidebar-card">
+                <h3 class="sidebar-card-title">🏆 Recent Results</h3>
+                <div class="recent-results" id="recentResults">
+                    <div class="result-chip success">✓ #12,846</div>
+                    <div class="result-chip success">✓ #12,845</div>
+                    <div class="result-chip fail">✗ #12,844</div>
+                    <div class="result-chip success">✓ #12,843</div>
+                    <div class="result-chip success">✓ #12,842</div>
+                    <div class="result-chip success">✓ #12,841</div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal">
+            <button class="modal-close" id="closeModal">✕</button>
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="signup">Sign Up</button>
+                <button class="modal-tab" data-tab="login">Log In</button>
+            </div>
+            <div class="modal-body" id="signupForm">
+                <h2>Create Your Account</h2>
+                <p>Join 150 million players — free forever!</p>
+                <div class="form-group"><input type="text" placeholder="Username" class="form-input" /></div>
+                <div class="form-group"><input type="email" placeholder="Email Address" class="form-input" /></div>
+                <div class="form-group"><input type="password" placeholder="Password" class="form-input" /></div>
+                <button class="btn btn-primary btn-lg full-width">Create My Account</button>
+            </div>
+            <div class="modal-body hidden" id="loginForm">
+                <h2>Welcome Back!</h2>
+                <div class="form-group"><input type="text" placeholder="Username or Email" class="form-input" /></div>
+                <div class="form-group"><input type="password" placeholder="Password" class="form-input" /></div>
+                <button class="btn btn-primary btn-lg full-width">Log In</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/puzzle.js"></script>
+</body>
+
+</html>

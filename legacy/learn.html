@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Chess — Chess.in</title>
+    <meta name="description"
+        content="Learn chess with interactive lessons, videos, and courses for all skill levels." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/learn.css" />
+</head>
+
+<body class="learn-page">
+
+    <!-- Header -->
+    <header class="site-header" id="site-header">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="nav-logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="#81b64c" />
+                        <path d="M20 6 L24 12 L22 12 L22 16 L28 16 L28 12 L26 12 L30 6 Z" fill="white" />
+                        <rect x="12" y="28" width="16" height="4" rx="2" fill="white" />
+                        <rect x="10" y="32" width="20" height="2" rx="1" fill="white" />
+                        <path d="M14 28 L16 20 L18 22 L20 18 L22 22 L24 20 L26 28 Z" fill="white" />
+                    </svg>
+                    <span class="logo-text">Chess<span class="logo-dot">.in</span></span>
+                </a>
+                <div class="game-nav-links">
+                    <a href="game.html" class="game-nav-link">Play</a>
+                    <a href="puzzles.html" class="game-nav-link">Puzzles</a>
+                    <a href="learn.html" class="game-nav-link active">Learn</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="btn btn-ghost" id="loginBtn">Log In</button>
+                <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="learn-hero">
+        <div class="learn-hero-inner">
+            <div class="learn-hero-text">
+                <span class="section-badge">🎓 Learn Chess</span>
+                <h1 class="learn-hero-title">Master Chess, <br>One Lesson at a Time</h1>
+                <p class="learn-hero-subtitle">Structured courses taught by GMs & IMs, from first moves to grandmaster
+                    strategies.</p>
+                <div class="learn-hero-stats">
+                    <div class="lh-stat"><strong>500+</strong><span>Lessons</span></div>
+                    <div class="lh-stat-divider"></div>
+                    <div class="lh-stat"><strong>50+</strong><span>Courses</span></div>
+                    <div class="lh-stat-divider"></div>
+                    <div class="lh-stat"><strong>12M+</strong><span>Students</span></div>
+                </div>
+            </div>
+            <div class="learn-hero-visual">
+                <div class="learn-hero-card">
+                    <div class="lhc-icon">♟</div>
+                    <div class="lhc-text">
+                        <div class="lhc-title">Your Next Lesson</div>
+                        <div class="lhc-name">The Italian Game Opening</div>
+                        <div class="lhc-progress">
+                            <div class="lhc-bar">
+                                <div class="lhc-fill" style="width:40%"></div>
+                            </div>
+                            <span>40% complete</span>
+                        </div>
+                    </div>
+                    <a href="#courses" class="btn btn-primary btn-sm">Continue →</a>
+                </div>
+                <div class="learn-hero-card secondary">
+                    <div class="lhc-icon">🏆</div>
+                    <div class="lhc-text">
+                        <div class="lhc-title">Weekly Challenge</div>
+                        <div class="lhc-name">Endgame Essentials</div>
+                        <div class="lhc-meta">Ends in 3 days · 8,291 enrolled</div>
+                    </div>
+                    <a href="#courses" class="btn btn-outline btn-sm">Join</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <div class="learn-filter-bar">
+        <div class="container">
+            <div class="filter-inner">
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="basics">Basics</button>
+                    <button class="filter-tab" data-filter="openings">Openings</button>
+                    <button class="filter-tab" data-filter="tactics">Tactics</button>
+                    <button class="filter-tab" data-filter="endgames">Endgames</button>
+                    <button class="filter-tab" data-filter="strategy">Strategy</button>
+                    <button class="filter-tab" data-filter="masterclass">Masterclass</button>
+                </div>
+                <div class="filter-level">
+                    <select class="level-select" id="levelSelect">
+                        <option value="all">All Levels</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Courses Section -->
+    <section class="courses-section" id="courses">
+        <div class="container">
+            <div class="courses-header">
+                <h2 class="section-title">Browse Courses</h2>
+                <span class="courses-count" id="coursesCount">Showing 12 courses</span>
+            </div>
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Instructors -->
+    <section class="instructors-section">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <span class="section-badge">👨‍🏫 Instructors</span>
+                    <h2 class="section-title">Learn from the Best</h2>
+                </div>
+            </div>
+            <div class="instructors-grid">
+                <div class="instructor-card">
+                    <div class="instructor-avatar" style="background: linear-gradient(135deg, #81b64c, #5a8a2c);">M
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-name">Magnus Carlsen</div>
+                        <div class="instructor-title">World Champion (2013–2023)</div>
+                        <div class="instructor-rating">⭐ 2852 FIDE</div>
+                    </div>
+                    <div class="instructor-courses">4 courses</div>
+                </div>
+                <div class="instructor-card">
+                    <div class="instructor-avatar" style="background: linear-gradient(135deg, #4a90d9, #1a5fa0);">H
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-name">Hikaru Nakamura</div>
+                        <div class="instructor-title">Super GM & Streaming Legend</div>
+                        <div class="instructor-rating">⭐ 2794 FIDE</div>
+                    </div>
+                    <div class="instructor-courses">6 courses</div>
+                </div>
+                <div class="instructor-card">
+                    <div class="instructor-avatar" style="background: linear-gradient(135deg, #ef4444, #b91c1c);">A
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-name">Alireza Firouzja</div>
+                        <div class="instructor-title">Youngest 2800+ Player</div>
+                        <div class="instructor-rating">⭐ 2793 FIDE</div>
+                    </div>
+                    <div class="instructor-courses">3 courses</div>
+                </div>
+                <div class="instructor-card">
+                    <div class="instructor-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">F
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-name">Fabiano Caruana</div>
+                        <div class="instructor-title">US Champion & WCC Challenger</div>
+                        <div class="instructor-rating">⭐ 2805 FIDE</div>
+                    </div>
+                    <div class="instructor-courses">5 courses</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path Section -->
+    <section class="path-section">
+        <div class="container">
+            <div class="path-inner">
+                <div class="path-text">
+                    <span class="section-badge">🗺️ Your Path</span>
+                    <h2 class="section-title">Structured Learning Path</h2>
+                    <p style="color:var(--text-secondary);margin-bottom:32px;line-height:1.7;">
+                        Follow our curated learning path designed to take you from beginner to confident player. Each
+                        step builds on the last.
+                    </p>
+                    <div class="path-steps">
+                        <div class="path-step completed">
+                            <div class="path-step-icon">✓</div>
+                            <div>
+                                <div class="path-step-name">Piece Movement &amp; Rules</div>
+                                <div class="path-step-desc">12 lessons · Completed</div>
+                            </div>
+                        </div>
+                        <div class="path-step active">
+                            <div class="path-step-icon">→</div>
+                            <div>
+                                <div class="path-step-name">Basic Openings</div>
+                                <div class="path-step-desc">18 lessons · In Progress (40%)</div>
+                            </div>
+                        </div>
+                        <div class="path-step">
+                            <div class="path-step-icon">3</div>
+                            <div>
+                                <div class="path-step-name">Tactics &amp; Combinations</div>
+                                <div class="path-step-desc">24 lessons · Locked</div>
+                            </div>
+                        </div>
+                        <div class="path-step">
+                            <div class="path-step-icon">4</div>
+                            <div>
+                                <div class="path-step-name">Endgame Fundamentals</div>
+                                <div class="path-step-desc">20 lessons · Locked</div>
+                            </div>
+                        </div>
+                        <div class="path-step">
+                            <div class="path-step-icon">5</div>
+                            <div>
+                                <div class="path-step-name">Positional Strategy</div>
+                                <div class="path-step-desc">30 lessons · Locked</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="path-visual">
+                    <div class="path-progress-circle">
+                        <svg viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="50" fill="none" stroke="#2a2a2a" stroke-width="10" />
+                            <circle cx="60" cy="60" r="50" fill="none" stroke="#81b64c" stroke-width="10"
+                                stroke-dasharray="314" stroke-dashoffset="220" stroke-linecap="round"
+                                transform="rotate(-90 60 60)" />
+                        </svg>
+                        <div class="path-pct-text">
+                            <span class="path-pct">30%</span>
+                            <span class="path-pct-label">Complete</span>
+                        </div>
+                    </div>
+                    <div class="path-xp-bar">
+                        <div class="path-xp-label">⚡ 840 XP earned this week</div>
+                        <div class="path-xp-track">
+                            <div class="path-xp-fill" style="width:56%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal">
+            <button class="modal-close" id="closeModal">✕</button>
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="signup">Sign Up</button>
+                <button class="modal-tab" data-tab="login">Log In</button>
+            </div>
+            <div class="modal-body" id="signupForm">
+                <h2>Create Your Account</h2>
+                <p>Join 150 million players — free forever!</p>
+                <div class="form-group"><input type="text" placeholder="Username" class="form-input" /></div>
+                <div class="form-group"><input type="email" placeholder="Email Address" class="form-input" /></div>
+                <div class="form-group"><input type="password" placeholder="Password" class="form-input" /></div>
+                <button class="btn btn-primary btn-lg full-width">Create My Account</button>
+            </div>
+            <div class="modal-body hidden" id="loginForm">
+                <h2>Welcome Back!</h2>
+                <div class="form-group"><input type="text" placeholder="Username or Email" class="form-input" /></div>
+                <div class="form-group"><input type="password" placeholder="Password" class="form-input" /></div>
+                <button class="btn btn-primary btn-lg full-width">Log In</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/learn.js"></script>
+</body>
+
+</html>
