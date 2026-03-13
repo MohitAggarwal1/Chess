@@ -1,0 +1,12 @@
+{
+  "name": "chess-clone",
+  "version": "1.0.0",
+  "description": "![Status](https://img.shields.io/badge/Status-Completed-success)\r ![Tech](https://img.shields.io/badge/Tech-React%2FNode%2FMongoDB-blue)\r ![Tailwind](https://img.shields.io/badge/Tailwind-v4-cyan)\r ![Realtime](https://img.shields.io/badge/Realtime-Socket.io-green)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
